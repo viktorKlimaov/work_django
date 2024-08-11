@@ -17,7 +17,7 @@ class Product(models.Model):
     created_at = models.DateField(blank=True, null=True, verbose_name='дата создания')
     updated_at = models.DateField(blank=True, null=True, verbose_name='дата последнего изменения')
 
-    # manufactured_at = models.DateField(blank=True, null=True, verbose_name='дата производства продукта')
+    manufactured_at = models.DateField(blank=True, null=True, verbose_name='дата производства продукта')
 
     class Meta:
         verbose_name = 'плагин'
