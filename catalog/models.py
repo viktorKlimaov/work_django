@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='название плагина',
                             help_text='Введите наименование плагина')
@@ -8,16 +9,14 @@ class Product(models.Model):
                                    help_text='Введите описание плагина')
 
     image = models.ImageField(upload_to='photo/product', blank=True, null=True,
-                              verbose_name='Фото',help_text='Загрузите фото')
+                              verbose_name='Фото', help_text='Загрузите фото')
 
     category_id = models.ForeignKey(to='Category', on_delete=models.SET_NULL,
-                                    verbose_name='категория',blank=True, null=True)
+                                    verbose_name='категория', blank=True, null=True)
 
     price = models.IntegerField(verbose_name='стоимость плагина')
     created_at = models.DateField(blank=True, null=True, verbose_name='дата создания')
     updated_at = models.DateField(blank=True, null=True, verbose_name='дата последнего изменения')
-
-    manufactured_at = models.DateField(blank=True, null=True, verbose_name='дата производства продукта')
 
     class Meta:
         verbose_name = 'плагин'
