@@ -1,0 +1,26 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Полезные утилиты",
+      "description": "Полезные утилиты"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Веб-приложения",
+      "description": "Веб-приложения"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Телеграм боты",
+      "description": "Различные телеграм боты"
+    }
+  }
+]
