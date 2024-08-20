@@ -1,59 +1,7 @@
 [
   {
     "model": "catalog.product",
-    "pk": 1,
-    "fields": {
-      "name": "Автомагазин",
-      "description": "Магазин автозапчастей",
-      "image": "",
-      "category_id": 2,
-      "price": 10,
-      "created_at": null,
-      "updated_at": null
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 2,
-    "fields": {
-      "name": "Для дома",
-      "description": "Интернет магазин Товаров для дома",
-      "image": "",
-      "category_id": null,
-      "price": 12,
-      "created_at": null,
-      "updated_at": null
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 3,
-    "fields": {
-      "name": "Антиавирус",
-      "description": "Антивирус вашего смартфона",
-      "image": "",
-      "category_id": 1,
-      "price": 100,
-      "created_at": null,
-      "updated_at": null
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 4,
-    "fields": {
-      "name": "Кошелек",
-      "description": "Позволяет удобно следить за финансами",
-      "image": "",
-      "category_id": 1,
-      "price": 110,
-      "created_at": null,
-      "updated_at": null
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 5,
+    "pk": 15,
     "fields": {
       "name": "ReadBook",
       "description": "Позволяет скачивать книги в различных форматах и читать",
@@ -66,13 +14,26 @@
   },
   {
     "model": "catalog.product",
-    "pk": 6,
+    "pk": 16,
     "fields": {
       "name": "Крестики нолики",
       "description": "Легендарная игра всех возрастов",
-      "image": "",
-      "category_id": null,
+      "image": "photo/product/cross_zero.png",
+      "category_id": 3,
       "price": 80,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "name": "Кошелек",
+      "description": "Позволяет удобно следить за финансами",
+      "image": "photo/product/Wallet.png",
+      "category_id": 1,
+      "price": 110,
       "created_at": null,
       "updated_at": null
     }
