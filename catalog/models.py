@@ -40,3 +40,22 @@ class Category(models.Model):
     def __str__(self):
         # Строковое отображение объекта
         return f'{self.name}'
+
+
+class Version(models.Model):
+    product = models.ForeignKey(to='Product', on_delete=models.CASCADE,
+                                verbose_name='Продукт', blank=True, null=True)
+    number_version = models.IntegerField(verbose_name='Номер версии')
+    version_name = models.CharField(max_length=150, verbose_name='Название версии')
+    is_version = models.BooleanField(default=True, verbose_name='Признак версии')
+
+
+    def __str__(self):
+        return f"{self.version_name}"
+
+    class Meta:
+        verbose_name = "версия продукта"
+        verbose_name_plural = "версии продуктов"
+
+
+

@@ -8,6 +8,13 @@
 </div>
 
 <div class="container">
+
+    <div class="row text-center mb-4">
+        <div class="col-4">
+            <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_form' %}">Добавить продукт</a>
+        </div>
+    </div>
+
     <div class="row text-center">
         {% for product in object_list %}
         <div class="col-3">
@@ -22,10 +29,29 @@
                     <p>{{ product.description | truncatechars:100}}</p>
 
                     <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_detail' product.pk %}">Детали</a>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_update' product.pk %}">Обновить</a>
+                    <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+
+     <div class="row text-center">
+        {% for version in versions %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ version.version_name }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"> {{ version.number_version }}</h1>
+                    <p>{{ version.product }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
