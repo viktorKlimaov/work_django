@@ -31,3 +31,10 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         if clean_data.lower() in word_list:
             raise forms.ValidationError('Запрещенное слово')
         return clean_data
+
+
+class VersionForm(StyleFormMixin, forms.ModelForm):
+
+    class Meta:
+        model = Product
+        fields = '__all__'
