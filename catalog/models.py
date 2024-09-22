@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='название плагина',
@@ -17,6 +19,8 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='стоимость плагина')
     created_at = models.DateField(blank=True, null=True, verbose_name='дата создания')
     updated_at = models.DateField(blank=True, null=True, verbose_name='дата последнего изменения')
+
+    user = models.ForeignKey(User, blank=True, null=True, verbose_name='Пользователь', on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = 'плагин'
