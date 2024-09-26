@@ -31,17 +31,22 @@
                     <p>{{ product.description | truncatechars:100}}</p>
 
                     {% for version in versions %}
-                    {% if  version.product == product %}
-                        <h4 class="my-0 font-weight-normal">{{ version.version_name }}</h4>
-                        <h1 class="card-title pricing-card-title"> {{ version.number_version }}</h1>
-                        <p>{{ version.product }}</p>
+                    {% if version.product == product %}
+                    <h4 class="my-0 font-weight-normal">{{ version.version_name }}</h4>
+                    <h1 class="card-title pricing-card-title"> {{ version.number_version }}</h1>
+                    <p>{{ version.product }}</p>
                     {% endif %}
                     {% endfor %}
 
                     <a class="p-2 btn btn-outline-primary"
                        href="{% url 'catalog:product_detail' product.pk %}">Детали</a>
+
+                    {% if perms.catalog.can_cancel_publication and perms.catalog.can_change_description_product and perms.catalog.can_change_category_product or user == product.user %}
+
                     <a class="p-2 btn btn-outline-primary"
                        href="{% url 'catalog:product_update' product.pk %}">Обновить</a>
+
+                    {% endif %}
                     <a class="p-2 btn btn-outline-primary"
                        href="{% url 'catalog:product_delete' product.pk %}">Удалить</a>
                 </div>

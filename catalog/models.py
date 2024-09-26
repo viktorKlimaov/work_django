@@ -22,9 +22,16 @@ class Product(models.Model):
 
     user = models.ForeignKey(User, blank=True, null=True, verbose_name='Пользователь', on_delete=models.SET_NULL)
 
+    is_publication = models.BooleanField(default=False, verbose_name='Признак публикации')
+
     class Meta:
         verbose_name = 'плагин'
         verbose_name_plural = 'плагины'
+        permissions = [
+            ('can_cancel_publication', 'Может отменять публикацию продукта'),
+            ('can_change_description_product', 'может менять описание любого продукта'),
+            ('can_change_category_product', 'может менять категорию любого продукта'),
+        ]
 
     def __str__(self):
         return f'{self.name}'
