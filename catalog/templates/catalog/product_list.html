@@ -15,6 +15,12 @@
             <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_form' %}">Добавить продукт</a>
             {% endif %}
         </div>
+
+        <div class="col-4">
+            {% if user.is_authenticated %}
+            <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:category_list' %}">Категории товаров</a>
+            {% endif %}
+        </div>
     </div>
 
     <div class="row text-center">
