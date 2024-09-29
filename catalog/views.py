@@ -7,7 +7,7 @@ from django.views.generic import (ListView, DetailView, TemplateView,
                                   CreateView, UpdateView, DeleteView)
 
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 
 
 class ProductListView(ListView):
@@ -107,3 +107,12 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
 
 class ContactView(TemplateView):
     template_name = 'catalog/contacts.html'
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    """
+    Контроллер для просмотра списка категорий
+    """
+    context_object_name = 'categories'
+    model = Category
+    template_name = 'catalog/category_list.html'
