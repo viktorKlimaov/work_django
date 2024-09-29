@@ -1,0 +1,44 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% load my_tags %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Категории товаров</h1>
+</div>
+
+<div class="container">
+
+    <div class="row text-center mb-4">
+        <div class="col-4">
+            {% if user.is_authenticated %}
+            <a class="p-2 btn btn-outline-primary" href="">Добавить категорию</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row text-center">
+        {% for category in categories %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ category.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <img src="{{ product.image | my_media }}" class="img-thumbnail">
+
+                    <p>{{ category.description | truncatechars:100}}</p>
+
+                    <a class="p-2 btn btn-outline-primary"
+                       href="">Детали</a>
+
+                    <a class="p-2 btn btn-outline-primary"
+                       href="">Обновить</a>
+
+                    <a class="p-2 btn btn-outline-primary"
+                       href="">Удалить</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
